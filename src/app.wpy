@@ -14,7 +14,7 @@ page{
   padding-left: 15px;
   padding-right: 15px;
 }
-.page__ft{
+.page__ft {
   padding-bottom: 10px;
   text-align: center;
 }
@@ -66,9 +66,13 @@ export default class extends wepy.app {
   constructor () {
     super()
     this.use('requestfix')
+    this.use('promisify')
   }
 
   onLaunch() {
+    wepy.login().then(res => {
+      console.log('login: ', res)
+    })
   }
 }
 </script>
