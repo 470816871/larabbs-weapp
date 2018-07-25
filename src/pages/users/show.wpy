@@ -92,5 +92,10 @@
         })
       }
     }
+    async onShow() {
+      this.$parent.checkRefreshPages(this.getCurrentPages().pop().route, () => {
+        this.getTopic(this.topic.id)
+      })
+    }
   }
 </script>
